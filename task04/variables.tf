@@ -88,4 +88,9 @@ variable "vm_admin_username" {
 variable "vm_admin_password" {
   description = "The admin password for the virtual machine."
   type        = string
+  sensitive   = true
+  validation {
+    condition     = length(var.vm_admin_password) >= 12
+    error_message = "Password must be at least 12 characters."
+  }
 }

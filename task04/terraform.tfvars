@@ -29,8 +29,7 @@ nsg_inbound_ssh_rule_name = "AllowSSH"
 vm_name = "cmaz-nw9g0zfg-mod4-vm"
 vm_os_version = "ubuntu-24_04-lts"
 vm_sku = "Standard_F2s_v2"
-vm_admin_username = "admin"
-vm_admin_password = "MyCoolPa$$word&^Nobody76Knows:)"
+vm_admin_username = "Admin"
 
 
 # Common variables
