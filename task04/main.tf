@@ -86,13 +86,13 @@ resource "azurerm_public_ip" "task04_public_ip" {
 
 
 resource "azurerm_linux_virtual_machine" "task04_vm" {
-  name                  = var.vm_name
-  location              = azurerm_resource_group.task04_rg.location
-  resource_group_name   = azurerm_resource_group.task04_rg.name
-  network_interface_ids = [azurerm_network_interface.task04_nic.id]
-  size                  = var.vm_size
-  admin_username        = var.vm_admin_username
-  admin_password        = var.vm_admin_password
+  name                            = var.vm_name
+  location                        = azurerm_resource_group.task04_rg.location
+  resource_group_name             = azurerm_resource_group.task04_rg.name
+  network_interface_ids           = [azurerm_network_interface.task04_nic.id]
+  size                            = var.vm_size
+  admin_username                  = var.vm_admin_username
+  admin_password                  = var.vm_admin_password
   disable_password_authentication = false
 
   os_disk {
