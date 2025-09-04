@@ -19,6 +19,8 @@ subnet_frontend_address_prefixes = [
 network_interface_name = "cmaz-nw9g0zfg-mod4-nic"
 public_ip_name         = "cmaz-nw9g0zfg-mod4-pip"
 dns_name_label         = "cmaz-nw9g0zfg-mod4-nginx"
+nic_ip_configuration_name                     = "internal"
+nic_ip_configuration_private_ip_allocation    = "Dynamic"
 
 # NSG
 nsg_name                   = "cmaz-nw9g0zfg-mod4-nsg"

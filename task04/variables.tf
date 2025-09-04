@@ -40,6 +40,16 @@ variable "network_interface_name" {
   type        = string
 }
 
+variable "nic_ip_configuration_name" {
+  description = "The name of the IP configuration for the network interface."
+  type        = string
+}
+
+variable "nic_ip_configuration_private_ip_allocation" {
+  description = "The private IP allocation method for the network interface."
+  type        = string
+
+}
 variable "nsg_name" {
   description = "The name of the network security group."
   type        = string
@@ -100,12 +110,12 @@ variable "vm_admin_username" {
   type        = string
 }
 
-variable "vm_admin_password" {
+variable "vm_password" {
   description = "The admin password for the virtual machine."
   type        = string
   sensitive   = true
   validation {
-    condition     = length(var.vm_admin_password) >= 12
+    condition     = length(var.vm_password) >= 12
     error_message = "Password must be at least 12 characters."
   }
 }

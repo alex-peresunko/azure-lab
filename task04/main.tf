@@ -25,9 +25,9 @@ resource "azurerm_network_interface" "task04_nic" {
   resource_group_name = azurerm_resource_group.task04_rg.name
 
   ip_configuration {
-    name                          = "internal"
+    name                          = var.nic_ip_configuration_name
     subnet_id                     = azurerm_subnet.task04_subnet_frontend.id
-    private_ip_address_allocation = "Dynamic"
+    private_ip_address_allocation = var.nic_ip_configuration_private_ip_allocation
     public_ip_address_id          = azurerm_public_ip.task04_public_ip.id
   }
 
@@ -92,7 +92,7 @@ resource "azurerm_linux_virtual_machine" "task04_vm" {
   network_interface_ids           = [azurerm_network_interface.task04_nic.id]
   size                            = var.vm_size
   admin_username                  = var.vm_admin_username
-  admin_password                  = var.vm_admin_password
+  admin_password                  = var.vm_password
   disable_password_authentication = false
 
   os_disk {
@@ -113,7 +113,7 @@ resource "azurerm_linux_virtual_machine" "task04_vm" {
     type         = "ssh"
     host         = azurerm_public_ip.task04_public_ip.ip_address
     user         = var.vm_admin_username
-    password     = var.vm_admin_password
+    password     = var.vm_password
     port         = 22
     timeout      = "2m"
     bastion_host = null
