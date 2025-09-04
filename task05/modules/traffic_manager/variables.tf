@@ -1,4 +1,5 @@
 
+
 variable "name" {
   description = "The name of the Traffic Manager profile."
   type        = string
@@ -6,11 +7,6 @@ variable "name" {
 
 variable "resource_group_name" {
   description = "The name of the resource group."
-  type        = string
-}
-
-variable "location" {
-  description = "The Azure region where the Traffic Manager profile will be created."
   type        = string
 }
 
@@ -65,6 +61,16 @@ variable "monitor_tolerated_number_of_failures" {
   description = "The number of tolerated failures before marking endpoint as unhealthy."
   type        = number
   default     = 3
+}
+
+variable "azure_endpoints" {
+  description = "A map of Azure endpoints for the Traffic Manager profile."
+  type = map(object({
+    name               = string
+    target_resource_id = string
+    weight             = optional(number)
+    priority           = optional(number)
+  }))
 }
 
 variable "tags" {
