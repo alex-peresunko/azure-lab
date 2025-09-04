@@ -107,4 +107,23 @@ resource "azurerm_virtual_machine" "task04_vm" {
   }
 
   tags = var.tag_creator
+
+  connection {
+    type        = "ssh"
+    host        = azurerm_public_ip.task04_public_ip.ip_address
+    user        = var.vm_admin_username
+    password    = var.vm_admin_password
+    port        = 22
+    timeout     = "2m"
+    bastion_host = null
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo apt-get update -y",
+      "sudo apt-get install nginx -y",
+      "sudo systemctl start nginx",
+      "sudo systemctl enable nginx"
+    ] 
+  }
 }
