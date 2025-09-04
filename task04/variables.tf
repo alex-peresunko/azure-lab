@@ -70,6 +70,16 @@ variable "vm_name" {
   type        = string
 }
 
+variable "vm_publisher" {
+  description = "The publisher of the virtual machine image."
+  type        = string
+}
+
+variable "vm_offer" {
+  description = "The offer of the virtual machine image."
+  type        = string
+}
+
 variable "vm_os_version" {
   description = "The OS version of the virtual machine."
   type        = string
@@ -77,6 +87,11 @@ variable "vm_os_version" {
 
 variable "vm_sku" {
   description = "The SKU of the virtual machine."
+  type        = string
+}
+
+variable "vm_size" {
+  description = "The size of the virtual machine."
   type        = string
 }
 
