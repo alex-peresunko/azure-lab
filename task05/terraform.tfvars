@@ -52,11 +52,9 @@ app_service_site_config = {
   }
 }
 
-verification_agent_ip = "18.153.146.156"
-
 app_service_ip_restriction = [
   {
-    ip_address  = var.verification_agent_ip
+    ip_address  = "18.153.146.156"
     action      = "Allow"
     priority    = 100
     name        = "allow-ip"

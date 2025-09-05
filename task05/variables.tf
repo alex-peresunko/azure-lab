@@ -105,9 +105,3 @@ variable "traffic_manager_endpoints" {
   description = "A map of endpoints to add to the Traffic Manager profile. The key is a logical name, and the value contains the properties for the endpoint."
   default     = {}
 }
-
-variable "verification_agent_ip" {
-  type        = string
-  description = "The IP address of the verification agent to allow access to the App Services."
-  
-}
