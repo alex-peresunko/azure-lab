@@ -27,13 +27,14 @@ variable "site_config" {
 
 variable "ip_restriction" {
   type = list(object({
-    ip_address  = string
+    ip_address  = optional(string)
     action      = string
     priority    = number
     name        = string
     description = optional(string)
     headers     = optional(map(string))
     subnet_id   = optional(string)
+    service_tag = optional(string)
   }))
   description = "A list of IP restriction rules for the App Service."
   default     = []

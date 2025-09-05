@@ -97,10 +97,10 @@ variable "traffic_manager_monitor_config" {
 
 variable "traffic_manager_endpoints" {
   type = map(object({
-    name               = string
-    target_resource_id = string
-    weight             = optional(number)
-    priority           = optional(number)
+    name                     = string
+    target_resource_id_key   = string
+    weight                   = optional(number)
+    priority                 = optional(number)
   }))
   description = "A map of endpoints to add to the Traffic Manager profile. The key is a logical name, and the value contains the properties for the endpoint."
   default     = {}
