@@ -42,12 +42,12 @@ module "traffic_manager" {
   traffic_routing_method   = var.traffic_manager_traffic_routing_method
   monitor_config           = var.traffic_manager_monitor_config
   endpoints = {
-    for app_key, app in var.traffic_manager_endpoints:
+    for app_key, app in var.traffic_manager_endpoints :
     app_key => {
-      name                     = app.name
-      target_resource_id       = module.app_services[app.target_resource_id_key].id
-      weight                   = app.weight
-      priority                 = app.priority
+      name               = app.name
+      target_resource_id = module.app_services[app.target_resource_id_key].id
+      weight             = app.weight
+      priority           = app.priority
     }
   }
 }

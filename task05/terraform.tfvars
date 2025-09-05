@@ -83,15 +83,15 @@ traffic_manager_monitor_config = {
 
 traffic_manager_endpoints = {
   "app1" = {
-    name               = "cmaz-nw9g0zfg-mod5-app-ep-01"
+    name                   = "cmaz-nw9g0zfg-mod5-app-ep-01"
     target_resource_id_key = "app1"
-    weight             = 1
-    priority           = 1
+    weight                 = 1
+    priority               = 1
   },
   "app2" = {
-    name               = "cmaz-nw9g0zfg-mod5-app-ep-02"
+    name                   = "cmaz-nw9g0zfg-mod5-app-ep-02"
     target_resource_id_key = "app2"
-    weight             = 1
-    priority           = 2
+    weight                 = 1
+    priority               = 2
   }
 }
