@@ -13,3 +13,14 @@ variable "common_tags" {
     Creator = "oleksandr_peresunko@epam.com"
   }
 }
+
+variable "app_service_plans" {
+  type = map(object({
+    name               = string,
+    resource_group_key = string,
+    os_type            = string,
+    sku_name           = string,
+    worker_count       = number,
+  }))
+  description = "A map of App Service Plans to create. The key is a logical name, and the value contains the properties for the App Service Plan."
+}
