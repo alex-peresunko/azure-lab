@@ -28,3 +28,34 @@ app_service_plans = {
     worker_count       = 1
   }
 }
+
+
+app_services = {
+  "app1" = {
+    name                 = "cmaz-nw9g0zfg-mod5-app-01"
+    resource_group_key   = "rg1"
+    app_service_plan_key = "asp1"
+  },
+  "app2" = {
+    name                 = "cmaz-nw9g0zfg-mod5-app-02"
+    resource_group_key   = "rg2"
+    app_service_plan_key = "asp2"
+  }
+}
+
+app_service_site_config = {
+  "app1" = {
+
+  },
+  "app2" = {
+
+  }
+}
+
+app_service_ip_restriction = [{
+  ip_address  = "18.153.146.156/32"
+  action      = "Allow"
+  priority    = 100
+  name        = "AllowSpecificIPVerificationAgent"
+  description = "Allow traffic from a specific IP of verification agent"
+}]
