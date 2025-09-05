@@ -36,15 +36,7 @@ variable "ip_restriction" {
     subnet_id   = optional(string)
   }))
   description = "A list of IP restriction rules for the App Service."
-  default = [
-    {
-      ip_address  = "0.0.0.0/0"
-      action      = "Deny"
-      priority    = 65000
-      name        = "DenyAll"
-      description = "Deny all traffic by default"
-    }
-  ]
+  default     = []
 
 }
 

@@ -16,5 +16,13 @@ resource "azurerm_windows_web_app" "this" {
         service_tag               = lookup(ip_restriction.value, "service_tag", null)
       }
     }
+    # default to deny all
+    ip_restriction {
+      ip_address  = "0.0.0.0/0"
+      action      = "Deny"
+      priority    = 65000
+      name        = "DenyAll"
+      description = "Deny all traffic by default"
+    }
   }
 }
