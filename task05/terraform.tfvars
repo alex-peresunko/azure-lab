@@ -52,25 +52,27 @@ app_service_site_config = {
   }
 }
 
+verification_agent_ip = "18.153.146.156"
+
 app_service_ip_restriction = [
   {
-    ip_address  = "18.153.146.156/32"
+    ip_address  = var.verification_agent_ip
     action      = "Allow"
     priority    = 100
-    name        = "AllowSpecificIPVerificationAgent"
+    name        = "allow-ip"
     description = "Allow traffic from a specific IP of verification agent"
   },
   {
     service_tag = "AzureTrafficManager"
     action      = "Allow"
     priority    = 110
-    name        = "AllowAzureTrafficManager"
+    name        = "allow-tm"
     description = "Allow traffic from Azure Traffic Manager service tag"
   }
 ]
 
 traffic_manager_name                     = "cmaz-nw9g0zfg-mod5-traf"
-traffic_manager_dns_config_relative_name = "cmaz-nw9g0zfg-mod5-traf"
+traffic_manager_dns_config_relative_name = "traffic_manager"
 traffic_manager_dns_config_ttl           = 300
 traffic_manager_resource_group_key       = "rg3"
 traffic_manager_location                 = "East US"

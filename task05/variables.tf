@@ -106,3 +106,8 @@ variable "traffic_manager_endpoints" {
   default     = {}
 }
 
+variable "verification_agent_ip" {
+  type        = string
+  description = "The IP address of the verification agent to allow access to the App Services."
+  
+}
