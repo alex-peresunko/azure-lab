@@ -1,3 +1,3 @@
-output "resource_group_names" {
-  value = { for rg in module.resource_groups : rg.name => rg.location }
+output "traffic_manager_fqdn" {
+  value = module.traffic_manager.traffic_manager_profile_fqdn
 }

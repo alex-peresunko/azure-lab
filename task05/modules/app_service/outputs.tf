@@ -1,6 +1,6 @@
-output "app_service_id" {
+output "id" {
   value = azurerm_windows_web_app.this.id
 }
-output "app_service_name" {
+output "name" {
   value = azurerm_windows_web_app.this.name
 }
