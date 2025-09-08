@@ -18,21 +18,15 @@ locals {
   sql_admin_password = random_password.this.result
 }
 
-# --- Look up the existing Key Vault using the new variables ---
-data "azurerm_key_vault" "existing_kv" {
-  name                = var.key_vault_name
-  resource_group_name = var.key_vault_resource_group_name
-}
-
 resource "azurerm_key_vault_secret" "vault_sql_admin_username" {
   name         = var.key_vault_secret_name_username
   value        = local.sql_admin_username
-  key_vault_id = data.azurerm_key_vault.existing_kv.id
+  key_vault_id = var.key_vault_id
 }
 resource "azurerm_key_vault_secret" "vault_sql_admin_password" {
   name         = var.key_vault_secret_name_password
   value        = local.sql_admin_password
-  key_vault_id = data.azurerm_key_vault.existing_kv.id
+  key_vault_id = var.key_vault_id
 }
 
 resource "azurerm_user_assigned_identity" "this" {

@@ -13,6 +13,12 @@ module "resource_group" {
 }
 
 
+# -- Key Vault --
+data "azurerm_key_vault" "task06_kv" {
+  name                = var.key_vault_name
+  resource_group_name = var.key_vault_resource_group_name
+}
+
 module "sql" {
   source                         = "./modules/sql"
   sql_server_name                = var.sql_server_name
@@ -20,8 +26,7 @@ module "sql" {
   location                       = var.location
   sql_server_version             = var.sql_server_version
   tags                           = var.common_tags
-  key_vault_name                 = var.key_vault_name
-  key_vault_resource_group_name  = var.key_vault_resource_group_name
+  key_vault_id                   = data.azurerm_key_vault.task06_kv.id
   key_vault_secret_name_username = var.key_vault_secret_name_username
   key_vault_secret_name_password = var.key_vault_secret_name_password
   sql_allowed_ip_address         = var.sql_allowed_ip_address
