@@ -39,6 +39,7 @@ module "webapp" {
   asp_name            = var.asp_name
   location            = var.asp_location
   asp_os_type         = var.asp_os_type
+  app_dotnet_version  = var.app_dotnet_version
   asp_sku_name        = var.asp_sku_name
   asp_worker_count    = var.asp_worker_count
   asp_tags            = var.common_tags

@@ -89,6 +89,10 @@ variable "app_tags" {
   default     = {}
 }
 
+variable "app_dotnet_version" {
+  type        = string  
+}
+
 variable "app_ip_restriction" {
   type = list(object({
     ip_address  = optional(string)

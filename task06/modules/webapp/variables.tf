@@ -42,6 +42,10 @@ variable "app_name" {
   description = "The name of the App Service."
 }
 
+variable "app_dotnet_version" {
+  type        = string
+}
+
 variable "app_tags" {
   type        = map(string)
   description = "A map of tags to assign to the App Service."

@@ -20,6 +20,7 @@ asp_os_type      = "Windows"
 asp_sku_name     = "B1"
 asp_worker_count = 1
 app_name         = "task06-webapp"
+app_dotnet_version = "8.0"
 asp_location     = "westeurope"
 app_ip_restriction = [
   {
