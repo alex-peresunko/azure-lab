@@ -45,3 +45,8 @@ variable "sql_server_version" {
   type        = string
   description = "The version of the SQL server."
 }
+
+variable "sql_allowed_ip_address" {
+  type        = string
+  description = "The specific public IP address to allow access to the SQL server for development."
+}

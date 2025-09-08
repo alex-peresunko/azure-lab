@@ -64,3 +64,19 @@ resource "azurerm_mssql_server" "this" {
 
   depends_on = [data.azurerm_client_config.current, local.sql_admin_username, local.sql_admin_password]
 }
+
+# Rule 1: Allow connection from Azure services
+# To do this, you create a rule with the special IP address range 0.0.0.0 to 0.0.0.0
+resource "azurerm_mssql_firewall_rule" "allow_azure_services" {
+  name             = "AllowAllWindowsAzureIps"
+  server_id        = azurerm_mssql_server.this.id
+  start_ip_address = "0.0.0.0"
+  end_ip_address   = "0.0.0.0"
+}
+
+resource "azurerm_mssql_firewall_rule" "allow_specific_ip" {
+  name             = "AllowMyDevelopmentIP"
+  server_id        = azurerm_mssql_server.this.id
+  start_ip_address = var.sql_allowed_ip_address
+  end_ip_address   = var.sql_allowed_ip_address
+}

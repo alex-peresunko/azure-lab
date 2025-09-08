@@ -24,7 +24,7 @@ module "sql" {
   key_vault_resource_group_name  = var.key_vault_resource_group_name
   key_vault_secret_name_username = var.key_vault_secret_name_username
   key_vault_secret_name_password = var.key_vault_secret_name_password
-
-  depends_on = [module.resource_group]
+  sql_allowed_ip_address         = var.sql_allowed_ip_address
+  depends_on                     = [module.resource_group]
 
 }
