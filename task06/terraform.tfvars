@@ -14,4 +14,18 @@ sql_server_name        = "task06-sqlserver"
 sql_server_version     = "12.0"
 sql_allowed_ip_address = "95.67.77.76"
 
-
+# -- App Service variables
+asp_name         = "task06-asp"
+asp_os_type      = "Windows"
+asp_sku_name     = "B1"
+asp_worker_count = 1
+app_name         = "task06-webapp"
+asp_location     = "westeurope"
+app_ip_restriction = [
+  {
+    ip_address = "95.67.77.76"
+    action     = "Allow"
+    priority   = 100
+    name       = "AllowDevIP"
+  }
+]
