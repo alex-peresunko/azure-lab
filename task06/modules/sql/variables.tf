@@ -43,3 +43,28 @@ variable "sql_allowed_ip_address" {
   type        = string
   description = "The specific public IP address to allow access to the SQL server for development."
 }
+
+# SQL Database variables
+
+variable "sql_database_name" {
+  type        = string
+  description = "The name of the SQL database."
+}
+
+variable "sql_database_collation" {
+  type        = string
+  description = "The collation of the SQL database."
+  default     = "SQL_Latin1_General_CP1_CI_AS"
+}
+
+variable "sql_database_sku_name" {
+  type        = string
+  description = "The SKU name for the SQL database. Examples include 'Basic', 'Standard', 'Premium', etc."
+  default     = "Basic"
+}
+
+variable "sql_database_max_size_gb" {
+  type        = number
+  description = "The maximum size of the SQL database in GB."
+  default     = 2
+}

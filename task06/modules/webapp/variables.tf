@@ -67,3 +67,9 @@ variable "app_ip_restriction" {
   default     = []
 
 }
+
+variable "sql_connection_string" {
+  type        = string
+  description = "The connection string for the App Service to connect to the SQL database."
+  sensitive   = true
+}

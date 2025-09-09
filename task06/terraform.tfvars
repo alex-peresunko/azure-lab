@@ -14,9 +14,14 @@ sql_server_name        = "task06-sqlserver"
 sql_server_version     = "12.0"
 sql_allowed_ip_address = "95.67.77.76"
 
+sql_database_name        = "task06-sqldb"
+sql_database_collation   = "SQL_Latin1_General_CP1_CI_AS"
+sql_database_sku_name    = "S0"
+sql_database_max_size_gb = 2
+
 # -- App Service variables
 asp_name           = "task06-asp"
-asp_os_type        = "Windows"
+asp_os_type        = "Linux"
 asp_sku_name       = "B1"
 asp_worker_count   = 1
 app_name           = "task06-webapp"

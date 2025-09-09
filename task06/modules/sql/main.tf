@@ -74,3 +74,15 @@ resource "azurerm_mssql_firewall_rule" "allow_specific_ip" {
   start_ip_address = var.sql_allowed_ip_address
   end_ip_address   = var.sql_allowed_ip_address
 }
+
+
+# MS SQL Database instance
+resource "azurerm_mssql_database" "this" {
+  name           = var.sql_database_name
+  server_id      = azurerm_mssql_server.this.id
+  sku_name       = var.sql_database_sku_name
+  collation      = var.sql_database_collation
+  max_size_gb    = var.sql_database_max_size_gb
+  zone_redundant = false
+  tags           = var.tags
+} 

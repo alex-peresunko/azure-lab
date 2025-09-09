@@ -4,6 +4,8 @@ resource "azurerm_service_plan" "this" {
   resource_group_name = var.resource_group_name
   sku_name            = var.asp_sku_name
   os_type             = var.asp_os_type
+  kind                = "Linux"
+  reserved            = true
   worker_count        = var.asp_worker_count
   tags                = var.asp_tags
 }
@@ -15,6 +17,11 @@ resource "azurerm_linux_web_app" "this" {
   resource_group_name = var.resource_group_name
   service_plan_id     = azurerm_service_plan.this.id
   tags                = var.app_tags
+  connection_string {
+    name  = "MyDbConnection"
+    type  = "SQLAzure"
+    value = var.sql_connection_string
+  }
   site_config {
     application_stack {
       dotnet_version = var.app_dotnet_version
