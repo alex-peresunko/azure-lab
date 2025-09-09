@@ -11,7 +11,7 @@ key_vault_secret_name_password = "sql-admin-password"
 
 
 sql_server_version = "12.0"
-allowed_ip_address = "95.67.77.76"
+allowed_ip_address = "18.153.146.156"
 
 sql_database_collation   = "SQL_Latin1_General_CP1_CI_AS"
 sql_database_sku_name    = "S2"
