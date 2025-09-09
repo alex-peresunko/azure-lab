@@ -6,15 +6,8 @@ resource "random_password" "this" {
   override_special = "!@#$%&*()-_=+[]{}<>:?"
 }
 
-resource "random_string" "sql_admin_username_suffix" {
-  length  = 8
-  upper   = false
-  lower   = true
-  special = false
-}
-
 locals {
-  sql_admin_username = "sqladmin-${random_string.sql_admin_username_suffix.result}"
+  sql_admin_username = "sql-admin"
   sql_admin_password = random_password.this.result
 }
 
@@ -29,13 +22,6 @@ resource "azurerm_key_vault_secret" "vault_sql_admin_password" {
   key_vault_id = var.key_vault_id
 }
 
-resource "azurerm_user_assigned_identity" "this" {
-  name                = "${var.sql_server_name}-identity"
-  resource_group_name = var.resource_group_name
-  location            = var.location
-
-}
-
 resource "azurerm_mssql_server" "this" {
   name                         = var.sql_server_name
   resource_group_name          = var.resource_group_name
@@ -44,17 +30,6 @@ resource "azurerm_mssql_server" "this" {
   administrator_login          = local.sql_admin_username
   administrator_login_password = local.sql_admin_password
   tags                         = var.tags
-
-  azuread_administrator {
-    login_username = azurerm_user_assigned_identity.this.name
-    object_id      = azurerm_user_assigned_identity.this.principal_id
-  }
-  identity {
-    type         = "UserAssigned"
-    identity_ids = [azurerm_user_assigned_identity.this.id]
-  }
-
-  primary_user_assigned_identity_id = azurerm_user_assigned_identity.this.id
 
   depends_on = [data.azurerm_client_config.current, local.sql_admin_username, local.sql_admin_password]
 }
