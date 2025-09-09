@@ -25,7 +25,7 @@ app_dotnet_version = "8.0"
 asp_location       = "centralindia"
 app_ip_restriction = [
   {
-    ip_address = "95.67.77.76/32"
+    ip_address = "18.153.146.156/32"
     action     = "Allow"
     priority   = 100
     name       = "allow-verification-ip"
