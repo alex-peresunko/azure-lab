@@ -2,8 +2,8 @@ common_tags = {
   Creator = "oleksandr_peresunko@epam.com"
 }
 
-resource_group_name = "task06-rg"
-location            = "eastus"
+resource_group_name = "task06-main-rg"
+location            = "centralindia"
 
 key_vault_name                 = "task06-kv"
 key_vault_resource_group_name  = "task06-rg"
@@ -24,7 +24,7 @@ app_dotnet_version = "8.0"
 asp_location       = "westeurope"
 app_ip_restriction = [
   {
-    ip_address = "95.67.77.76"
+    ip_address = "95.67.77.76/32"
     action     = "Allow"
     priority   = 100
     name       = "AllowDevIP"
