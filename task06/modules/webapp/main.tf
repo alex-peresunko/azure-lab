@@ -17,7 +17,7 @@ resource "azurerm_linux_web_app" "this" {
   tags                = var.app_tags
   site_config {
     application_stack {
-      dotnet_version      = var.app_dotnet_version
+      dotnet_version = var.app_dotnet_version
     }
     dynamic "ip_restriction" {
       for_each = var.app_ip_restriction

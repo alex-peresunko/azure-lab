@@ -90,7 +90,7 @@ variable "app_tags" {
 }
 
 variable "app_dotnet_version" {
-  type        = string  
+  type = string
 }
 
 variable "app_ip_restriction" {
