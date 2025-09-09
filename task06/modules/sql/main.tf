@@ -71,8 +71,8 @@ resource "azurerm_mssql_firewall_rule" "allow_azure_services" {
 resource "azurerm_mssql_firewall_rule" "allow_specific_ip" {
   name             = "AllowMyDevelopmentIP"
   server_id        = azurerm_mssql_server.this.id
-  start_ip_address = var.sql_allowed_ip_address
-  end_ip_address   = var.sql_allowed_ip_address
+  start_ip_address = var.allowed_ip_address
+  end_ip_address   = var.allowed_ip_address
 }
 
 

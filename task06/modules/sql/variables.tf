@@ -39,7 +39,7 @@ variable "key_vault_secret_name_password" {
   description = "The name of the secret in Key Vault to store the SQL admin password."
 }
 
-variable "sql_allowed_ip_address" {
+variable "allowed_ip_address" {
   type        = string
   description = "The specific public IP address to allow access to the SQL server for development."
 }

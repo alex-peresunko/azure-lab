@@ -29,7 +29,7 @@ module "sql" {
   key_vault_id                   = data.azurerm_key_vault.task06_kv.id
   key_vault_secret_name_username = var.key_vault_secret_name_username
   key_vault_secret_name_password = var.key_vault_secret_name_password
-  sql_allowed_ip_address         = var.sql_allowed_ip_address
+  allowed_ip_address             = var.allowed_ip_address
   sql_database_name              = local.sql_db_name
   sql_database_collation         = var.sql_database_collation
   sql_database_sku_name          = var.sql_database_sku_name
