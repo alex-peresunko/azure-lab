@@ -73,3 +73,8 @@ variable "sql_connection_string" {
   description = "The connection string for the App Service to connect to the SQL database."
   sensitive   = true
 }
+
+variable "key_vault_id" {
+  type        = string
+  description = "The ID of the Key Vault."
+}

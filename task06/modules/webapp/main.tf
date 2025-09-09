@@ -15,6 +15,9 @@ resource "azurerm_linux_web_app" "this" {
   resource_group_name = var.resource_group_name
   service_plan_id     = azurerm_service_plan.this.id
   tags                = var.app_tags
+  identity {
+    type = "SystemAssigned"
+  }
   connection_string {
     name  = "MyDbConnection"
     type  = "SQLAzure"
@@ -44,4 +47,10 @@ resource "azurerm_linux_web_app" "this" {
       description = "Deny all traffic by default"
     }
   }
+}
+
+resource "azurerm_role_assignment" "webapp_kv_secrets" {
+  scope                = var.key_vault_id
+  role_definition_name = "Key Vault Secrets Officer"
+  principal_id         = azurerm_linux_web_app.this.identity[0].principal_id
 }

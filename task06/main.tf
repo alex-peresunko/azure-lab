@@ -51,6 +51,7 @@ module "webapp" {
   app_tags              = var.common_tags
   app_ip_restriction    = var.app_ip_restriction
   sql_connection_string = module.sql.sql_connection_string
+  key_vault_id          = data.azurerm_key_vault.task06_kv.id
   depends_on            = [module.resource_group]
 
 }
