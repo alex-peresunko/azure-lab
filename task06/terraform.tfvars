@@ -2,36 +2,32 @@ common_tags = {
   Creator = "oleksandr_peresunko@epam.com"
 }
 
-resource_group_name = "task06-main-rg"
-location            = "centralindia"
+location = "centralindia"
 
-key_vault_name                 = "task06-kv"
-key_vault_resource_group_name  = "task06-rg"
-key_vault_secret_name_username = "sql-admin-username"
+key_vault_name                 = "cmaz-nw9g0zfg-mod6-kv"
+key_vault_resource_group_name  = "cmaz-nw9g0zfg-mod6-kv-rg"
+key_vault_secret_name_username = "sql-admin-name"
 key_vault_secret_name_password = "sql-admin-password"
 
-sql_server_name        = "task06-sqlserver"
+
 sql_server_version     = "12.0"
 sql_allowed_ip_address = "95.67.77.76"
 
-sql_database_name        = "task06-sqldb"
 sql_database_collation   = "SQL_Latin1_General_CP1_CI_AS"
-sql_database_sku_name    = "S0"
+sql_database_sku_name    = "S2"
 sql_database_max_size_gb = 2
 
 # -- App Service variables
-asp_name           = "task06-asp"
 asp_os_type        = "Linux"
-asp_sku_name       = "B1"
+asp_sku_name       = "P0v3"
 asp_worker_count   = 1
-app_name           = "task06-webapp"
 app_dotnet_version = "8.0"
-asp_location       = "westeurope"
+asp_location       = "centralindia"
 app_ip_restriction = [
   {
     ip_address = "95.67.77.76/32"
     action     = "Allow"
     priority   = 100
-    name       = "AllowDevIP"
+    name       = "allow-verification-ip"
   }
 ]

@@ -1,8 +1,3 @@
-variable "resource_group_name" {
-  type        = string
-  description = "The name of the resource group"
-}
-
 variable "location" {
   type        = string
   description = "The Azure region where the Key Vault will be created."
@@ -36,10 +31,6 @@ variable "key_vault_secret_name_password" {
 
 
 # SQL Server variables
-variable "sql_server_name" {
-  type        = string
-  description = "The name of the SQL server."
-}
 
 variable "sql_server_version" {
   type        = string
@@ -52,10 +43,6 @@ variable "sql_allowed_ip_address" {
 }
 
 # App Service variables
-variable "asp_name" {
-  type        = string
-  description = "The name of the App Service Plan."
-}
 
 variable "asp_location" {
   type        = string
@@ -78,11 +65,6 @@ variable "asp_worker_count" {
   type        = number
   description = "The number of workers to be allocated to the App Service Plan."
 }
-variable "app_name" {
-  type        = string
-  description = "The name of the App Service."
-}
-
 variable "app_tags" {
   type        = map(string)
   description = "A map of tags to assign to the App Service."
@@ -110,11 +92,6 @@ variable "app_ip_restriction" {
 }
 
 # SQL Database variables
-variable "sql_database_name" {
-  type        = string
-  description = "The name of the SQL database."
-}
-
 variable "sql_database_collation" {
   type        = string
   description = "The collation of the SQL database."
