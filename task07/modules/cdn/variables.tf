@@ -8,17 +8,31 @@ variable "location" {
   description = "The Azure region where the CDN resources will be deployed."
 }
 
-variable "cdn_profile_name" {
+variable "fd_profile_name" {
   type        = string
   description = "The name of the Azure CDN profile."
 }
+variable "fd_profile_sku" {
+  type        = string
+  description = "The SKU of the Azure CDN profile."
+}
 
-variable "cdn_endpoint_name" {
+variable "fd_endpoint_name" {
   type        = string
   description = "The name of the Azure CDN endpoint."
 }
 
-variable "origin_host_name" {
+variable "fd_origin_group_name" {
   type        = string
-  description = "The hostname of the origin server for the CDN endpoint."
+  description = "The name of the Azure CDN origin group."
+}
+
+variable "fd_origin_name" {
+  type        = string
+  description = "The name of the Azure CDN origin."
+}
+
+variable "fd_route_name" {
+  type        = string
+  description = "The name of the Azure CDN route."
 }
