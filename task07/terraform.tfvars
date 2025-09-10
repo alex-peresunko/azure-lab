@@ -1,0 +1,12 @@
+resource_group_name  = "cmtr-nw9g0zfg-mod7-rg"
+resource_group_id    = "/subscriptions/159abae0-7b18-4cbd-827a-90258ccc65b3/resourceGroups/cmtr-nw9g0zfg-mod7-rg"
+storage_account_name = "cmtrnw9g0zfgmod7sa"
+storage_account_id   = "/subscriptions/159abae0-7b18-4cbd-827a-90258ccc65b3/resourceGroups/cmtr-nw9g0zfg-mod7-rg/providers/Microsoft.Storage/storageAccounts/cmtrnw9g0zfgmod7sa"
+
+filename_sa          = "blob.txt"
+fd_profile_name      = "cmtr-nw9g0zfg-mod7-fd-profile"
+fd_profile_sku       = "Standard_AzureFrontDoor"
+fd_endpoint_name     = "cmtr-nw9g0zfg-mod7-fd-endpoint"
+fd_origin_group_name = "cmtr-nw9g0zfg-mod7-fd-origin-group"
+fd_origin_name       = "cmtr-nw9g0zfg-mod7-fd-origin"
+fd_route_name        = "default"
