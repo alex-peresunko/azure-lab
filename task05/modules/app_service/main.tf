@@ -18,7 +18,7 @@ resource "azurerm_windows_web_app" "this" {
     }
     # default to deny all
     ip_restriction {
-      ip_address  = "0.0.0.0/0"
+      ip_address  = "Any"
       action      = "Deny"
       priority    = 65000
       name        = "DenyAll"
