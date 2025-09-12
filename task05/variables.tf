@@ -9,9 +9,6 @@ variable "resource_groups" {
 variable "common_tags" {
   type        = map(string)
   description = "Common tags to apply to all resources."
-  default = {
-    Creator = "oleksandr_peresunko@epam.com"
-  }
 }
 
 variable "app_service_plans" {

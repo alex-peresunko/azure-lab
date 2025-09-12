@@ -95,3 +95,7 @@ traffic_manager_endpoints = {
     priority               = 2
   }
 }
+
+common_tags = {
+  "Creator" = "oleksandr_peresunko@epam.com"
+}
